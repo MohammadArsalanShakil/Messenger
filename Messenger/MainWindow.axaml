@@ -1,0 +1,90 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="750" 
+        Height="500"
+        x:Class="Messenger.MainWindow"
+        Icon="C:\Users\Arsalan\source\repos\Messenger\Messenger\Resources\icons8-shield-70.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Messenger">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="0.5*" />
+      <RowDefinition Height="0.3*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">Encryption and Hashing</TextBlock>
+
+    <Grid Grid.Row="1" Margin="5">
+      <Grid.RowDefinitions>
+
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Enter Key: </TextBlock>
+      <TextBox Grid.Column="1" Grid.ColumnSpan="2" Name="textBox_Key" Watermark="Enter Key for Encryption and Decryption" />
+
+    </Grid>
+    
+    <Grid Grid.Row="2" Margin="5">
+      <Grid.RowDefinitions>
+        
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Enter Text for Encryption: </TextBlock>
+      <TextBox Grid.Column="1" Name="textBox_forEncrypt" Watermark="Enter Text" AcceptsReturn="True" TextWrapping="Wrap" />
+      <Button Grid.Column="2" Name="Btn_Encrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center">Encrypt</Button>
+      
+    </Grid>
+
+    <Grid Grid.Row="3" Margin="5">
+      <Grid.RowDefinitions>
+
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Enter Text for Decryption: </TextBlock>
+      <TextBox Grid.Column="1" Name="textBox_forDecrypt" Watermark="Enter Cipher" AcceptsReturn="True" TextWrapping="Wrap" />
+      <Button Grid.Column="2" Name="Btn_Decrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center">Decrypt</Button>
+
+    </Grid>
+
+    <Grid Grid.Row="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <RadioButton Grid.Column="0" Name="radioBtn_algo_MD5" HorizontalAlignment="Center">MD5</RadioButton>
+      <RadioButton Grid.Column="1" Name="radioBtn_algo_SHA1" HorizontalAlignment="Center">SHA1</RadioButton>
+      <RadioButton Grid.Column="2" Name="radioBtn_algo_SHA256" HorizontalAlignment="Center">SHA256</RadioButton>
+      <RadioButton Grid.Column="3" Name="radioBtn_algo_SHA384" HorizontalAlignment="Center">SHA384</RadioButton>
+      <RadioButton Grid.Column="4" Name="radioBtn_algo_SHA512" HorizontalAlignment="Center">SHA512</RadioButton>
+
+
+    </Grid>    
+  </Grid>
+</Window>
