@@ -36,11 +36,11 @@ namespace Messenger.Util
         /// </summary>
         public static string key = "YOUR_SECRET_KEY_GOES_HERE";
 
-        private static TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
-        private static MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-        private static SHA1Managed sha1 = new SHA1Managed();
-        private static SHA256Managed sha256 = new SHA256Managed();
-        private static SHA384Managed sha384 = new SHA384Managed();
+        private static TripleDES tripleDES = new TripleDESCryptoServiceProvider();
+        private static MD5 md5 = new MD5CryptoServiceProvider();
+        private static SHA1 sha1 = new SHA1Managed();
+        private static SHA256 sha256 = new SHA256Managed();
+        private static SHA384 sha384 = new SHA384Managed();
         private static SHA512 sha512 = new SHA512Managed();
         private static UTF8Encoding utf8 = new UTF8Encoding();
         private static ICryptoTransform cryptoTransform = null;

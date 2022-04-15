@@ -70,6 +70,10 @@
     </Grid>
 
     <Grid Grid.Row="4">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
@@ -78,13 +82,15 @@
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
 
-      <RadioButton Grid.Column="0" Name="radioBtn_algo_MD5" HorizontalAlignment="Center">MD5</RadioButton>
-      <RadioButton Grid.Column="1" Name="radioBtn_algo_SHA1" HorizontalAlignment="Center">SHA1</RadioButton>
-      <RadioButton Grid.Column="2" Name="radioBtn_algo_SHA256" HorizontalAlignment="Center">SHA256</RadioButton>
-      <RadioButton Grid.Column="3" Name="radioBtn_algo_SHA384" HorizontalAlignment="Center">SHA384</RadioButton>
-      <RadioButton Grid.Column="4" Name="radioBtn_algo_SHA512" HorizontalAlignment="Center">SHA512</RadioButton>
+      <RadioButton Grid.Column="0" Grid.Row="0" Name="radioBtn_algo_MD5" HorizontalAlignment="Center">MD5</RadioButton>
+      <RadioButton Grid.Column="1" Grid.Row="0" Name="radioBtn_algo_SHA1" HorizontalAlignment="Center">SHA1</RadioButton>
+      <RadioButton Grid.Column="2" Grid.Row="0" Name="radioBtn_algo_SHA256" HorizontalAlignment="Center">SHA256</RadioButton>
+      <RadioButton Grid.Column="3" Grid.Row="0" Name="radioBtn_algo_SHA384" HorizontalAlignment="Center">SHA384</RadioButton>
+      <RadioButton Grid.Column="4" Grid.Row="0" Name="radioBtn_algo_SHA512" HorizontalAlignment="Center">SHA512</RadioButton>
 
+      <TextBlock Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Name="textBlock_Hash" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 
     </Grid>    
+    
   </Grid>
 </Window>
