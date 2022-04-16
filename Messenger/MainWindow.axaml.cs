@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using System.Collections.Generic;
 using Messenger.Util;
+using Messenger.Utils;
 
 namespace Messenger
 {
@@ -47,31 +48,31 @@ namespace Messenger
                     {
                         if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
                             ((TextBox)_widgets["textBox_forDecrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forEncrypt"]).Text);
+                        else
+                            await MessageBox.Show(this, Messages.keyEncryptErrorMessage, Messages.encryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
+                    }
+                    else
+                    {
+                        await MessageBox.Show(this, Messages.keyEncryptErrorMessage, Messages.encryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     }
                     break;
                 case "Btn_Hash":
                     if (((TextBox)_widgets["textBox_forEncrypt"]).Text != string.Empty)
                     {
                         if (((RadioButton)_widgets["radioBtn_algo_MD5"]).IsChecked == true)
-                        {
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.MD5);
-                        }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA1"]).IsChecked == true)
-                        {
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA1);
-                        }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA256"]).IsChecked == true)
-                        {
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA256);
-                        }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA384"]).IsChecked == true)
-                        {
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA384);
-                        }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA512"]).IsChecked == true)
-                        {
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA512);
-                        }
+                    }
+                    else
+                    {
+                        await MessageBox.Show(this, Messages.hashingErrorMessage, Messages.hashingErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     }
                     break;
                 case "Btn_Decrypt":
@@ -79,13 +80,19 @@ namespace Messenger
                     {
                         if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
                             ((TextBox)_widgets["textBox_forEncrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forDecrypt"]).Text);
+                        else
+                            await MessageBox.Show(this, Messages.keyDecryptErrorMessage, Messages.decryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
+                    }
+                    else
+                    {
+                        await MessageBox.Show(this, Messages.decryptionErrorMessage, Messages.decryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     }
                     break;
                 case "Btn_copyHash":
                     if (((TextBlock)_widgets["textBlock_Hash"]).Text != string.Empty)
-                    {
                         await Application.Current.Clipboard.SetTextAsync(((TextBlock)_widgets["textBlock_Hash"]).Text);
-                    }
+                    else
+                        await MessageBox.Show(this, Messages.hashCopyErrorMessage, Messages.hashCopyErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     break;
                 default:
                     break;

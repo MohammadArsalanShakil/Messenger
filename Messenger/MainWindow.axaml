@@ -5,7 +5,7 @@
         Width="750" 
         Height="500"
         x:Class="Messenger.MainWindow"
-        Icon="C:\Users\Arsalan\source\repos\Messenger\Messenger\Resources\icons8-shield-70.png"
+        Icon="/Resources/Icons/icons8-shield-70.png"
         WindowStartupLocation="CenterScreen"
         Title="Messenger">
   <Grid>
