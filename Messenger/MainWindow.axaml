@@ -7,6 +7,7 @@
         x:Class="Messenger.MainWindow"
         Icon="/Resources/Icons/icons8-shield-70.png"
         WindowStartupLocation="CenterScreen"
+        CanResize="False"
         Title="Messenger">
   <Grid>
     <Grid.RowDefinitions>
@@ -33,7 +34,7 @@
       </Grid.ColumnDefinitions>
 
       <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Enter Key: </TextBlock>
-      <TextBox Grid.Column="1" Grid.ColumnSpan="2" Name="textBox_Key" Watermark="Enter Key for Encryption and Decryption" />
+      <TextBox Grid.Column="1" Grid.ColumnSpan="2" Name="textBox_Key" Watermark="Enter Key for Encryption and Decryption" Margin="0 0 45 0" />
 
     </Grid>
     
