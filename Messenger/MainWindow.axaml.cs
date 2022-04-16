@@ -98,6 +98,9 @@ namespace Messenger
                 case "Btn_clearDecrypt":
                     ((TextBox)_widgets["textBox_forDecrypt"]).Text = null;
                     break;
+                case "Btn_clearHash":
+                    ((TextBlock)_widgets["textBlock_Hash"]).Text = null;
+                    break;
                 default:
                     break;
 
