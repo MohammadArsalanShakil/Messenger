@@ -1,3 +1,3 @@
 Messenger
 
-<img src="/ScreenShots/Screen_1.jpg" width="270" height="461"> <img src="/ScreenShots/Screen_2.jpg" width="270" height="461"> <img src="/ScreenShots/Screen_3.jpg" width="270" height="461"> <img src="/ScreenShots/Screen_4.jpg" width="270" height="461">
+<img src="/Screenshots/Main_Window.png" width="270" height="461"> <img src="/ScreenShots/Error_Window.png" width="270" height="461"> <img src="/ScreenShots/Text_Entered_for_Encryption.png" width="270" height="461"> <img src="/ScreenShots/Encrypted_Text_output.png" width="270" height="461"> <img src="/ScreenShots/Hash_Generated_for_Text.png" width="270" height="461">
