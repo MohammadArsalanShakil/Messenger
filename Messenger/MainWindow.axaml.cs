@@ -78,7 +78,7 @@ namespace Messenger
                     if (((TextBox)_widgets["textBox_forDecrypt"]).Text != null)
                     {
                         if (((TextBox)_widgets["textBox_Key"]).Text != null)
-                            ((TextBox)_widgets["textBox_forEncrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forDecrypt"]).Text);
+                            ((TextBox)_widgets["textBox_forEncrypt"]).Text = CryptoUtil.Decrypt(((TextBox)_widgets["textBox_forDecrypt"]).Text);
                         else
                             await MessageBox.Show(this, Messages.keyDecryptErrorMessage, Messages.decryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     }
