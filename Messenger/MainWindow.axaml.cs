@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using System.Collections.Generic;
+using Messenger.Util;
 
 namespace Messenger
 {
@@ -33,6 +34,7 @@ namespace Messenger
             _widgets.Add("radioBtn_algo_SHA384", this.FindControl<RadioButton>("radioBtn_algo_SHA384"));
             _widgets.Add("radioBtn_algo_SHA512", this.FindControl<RadioButton>("radioBtn_algo_SHA512"));
 
+            ((TextBox)_widgets["textBox_Key"]).Text = "YOUR_SECRET_KEY_GOES_HERE";
             ((RadioButton)_widgets["radioBtn_algo_MD5"]).IsChecked = true;
         }
 
@@ -41,70 +43,48 @@ namespace Messenger
             switch ((sender as Button).Name)
             {
                 case "Btn_Encrypt":
-                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text == string.Empty)
+                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != string.Empty)
                     {
-                        
-                    }
-                    else if (((TextBox)_widgets["textBox_Key"]).Text == string.Empty)
-                    {
-
-                    }
-                    else
-                    {
-                        
+                        if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
+                            ((TextBox)_widgets["textBox_forDecrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forEncrypt"]).Text);
                     }
                     break;
                 case "Btn_Hash":
-                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text == string.Empty)
-                    {
-
-                    }
-                    else
+                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != string.Empty)
                     {
                         if (((RadioButton)_widgets["radioBtn_algo_MD5"]).IsChecked == true)
                         {
-
+                            ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.MD5);
                         }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA1"]).IsChecked == true)
                         {
-
+                            ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA1);
                         }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA256"]).IsChecked == true)
                         {
-
+                            ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA256);
                         }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA384"]).IsChecked == true)
                         {
-
+                            ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA384);
                         }
                         else if (((RadioButton)_widgets["radioBtn_algo_SHA512"]).IsChecked == true)
                         {
-
+                            ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.SHA512);
                         }
                     }
                     break;
                 case "Btn_Decrypt":
-                    if (((TextBox)_widgets["textBox_forDecrypt"]).Text == string.Empty)
+                    if (((TextBox)_widgets["textBox_forDecrypt"]).Text != string.Empty)
                     {
-
-                    }
-                    else if (((TextBox)_widgets["textBox_Key"]).Text == string.Empty)
-                    {
-
-                    }
-                    else
-                    {
-
+                        if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
+                            ((TextBox)_widgets["textBox_forEncrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forDecrypt"]).Text);
                     }
                     break;
                 case "Btn_copyHash":
-                    if (((TextBlock)_widgets["textBlock_Hash"]).Text == string.Empty)
+                    if (((TextBlock)_widgets["textBlock_Hash"]).Text != string.Empty)
                     {
-
-                    }
-                    else
-                    {
-                        
+                        await Application.Current.Clipboard.SetTextAsync(((TextBlock)_widgets["textBlock_Hash"]).Text);
                     }
                     break;
                 default:
