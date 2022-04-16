@@ -102,6 +102,7 @@
       <Grid.RowDefinitions>
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
@@ -120,7 +121,8 @@
       <RadioButton Grid.Column="5" Grid.Row="0" Name="radioBtn_algo_SHA512" HorizontalAlignment="Center">SHA512</RadioButton>
 
       <TextBlock Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Name="textBlock_Hash" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-      <Button Grid.Column="6" Grid.Row="1" Name="Btn_copyHash" Click="Button_OnClick" >Copy</Button>
+      <Button Grid.Column="6" Grid.Row="1" Name="Btn_copyHash" Click="Button_OnClick" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" >Copy</Button>
+      <Button Grid.Column="6" Grid.Row="2" Name="Btn_clearHash" Click="Button_OnClick" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">Clear</Button>
 
     </Grid>    
     
