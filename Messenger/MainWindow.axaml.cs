@@ -34,7 +34,6 @@ namespace Messenger
             _widgets.Add("radioBtn_algo_SHA384", this.FindControl<RadioButton>("radioBtn_algo_SHA384"));
             _widgets.Add("radioBtn_algo_SHA512", this.FindControl<RadioButton>("radioBtn_algo_SHA512"));
 
-            ((TextBox)_widgets["textBox_Key"]).Text = "YOUR_SECRET_KEY_GOES_HERE";
             ((RadioButton)_widgets["radioBtn_algo_MD5"]).IsChecked = true;
         }
 
