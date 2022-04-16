@@ -1,25 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
-using System.IO;
 
-namespace Messenger.Util
+namespace Messenger.Utils
 {
-    /// <summary>
-    /// Algorithms supported
-    /// String word = "BSCS 8A";
-    //String encryptWord = CryptoUtil.Encrypt(word);
-    //String decryptWord = CryptoUtil.Decrypt(encryptWord);
-    //Console.WriteLine("Encryption " + encryptWord);
-    //Console.WriteLine("Decryption " + decryptWord);
-    //Console.WriteLine("Original String: " + word);
-    //Console.WriteLine("MD5:    " + CryptoUtil.GetHashFromString(word, Algorithm.MD5));
-    //Console.WriteLine("SHA1:   " + CryptoUtil.GetHashFromString(word, Algorithm.SHA1));
-    //Console.WriteLine("SHA256: " + CryptoUtil.GetHashFromString(word, Algorithm.SHA256));
-    //Console.WriteLine("SHA384: " + CryptoUtil.GetHashFromString(word, Algorithm.SHA384));
-    //Console.WriteLine("SHA512: " + CryptoUtil.GetHashFromString(word, Algorithm.SHA512));
-    /// </summary>
-
     /// <summary>
     /// Algorithms supported
     /// </summary>
@@ -73,8 +57,7 @@ namespace Messenger.Util
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error while encrypting: " + e.Message);
-                return string.Empty;
+                return "Error while encrypting: " + e.Message;
             }
         }
 
@@ -102,8 +85,7 @@ namespace Messenger.Util
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error while decrypting: " + e.Message);
-                return string.Empty;
+                return "Error while decrypting: " + e.Message;
             }
         }
 
@@ -148,55 +130,7 @@ namespace Messenger.Util
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error while encrypting: " + e.Message);
-                return string.Empty;
-            }
-        }
-
-        /// <summary>
-        /// Encrypts the informed file using a specific algorithm
-        /// </summary>
-        /// <param name="file">The file that will be encrypted</param>
-        /// <param name="algorithm">The algorithm that will be used</param>
-        /// <returns>The encrypted string</returns>
-        public static string GetHashFromFile(string file, Algorithm algorithm)
-        {
-            try
-            {
-                stringBuilder = new StringBuilder();
-
-                using (FileStream fileStream = new FileStream(file, FileMode.Open))
-                    switch (algorithm)
-                    {
-                        case Algorithm.MD5:
-                            arrBytes = md5.ComputeHash(fileStream);
-                            break;
-                        case Algorithm.SHA1:
-                            arrBytes = sha1.ComputeHash(fileStream);
-                            break;
-                        case Algorithm.SHA256:
-                            arrBytes = sha256.ComputeHash(fileStream);
-                            break;
-                        case Algorithm.SHA384:
-                            arrBytes = sha384.ComputeHash(fileStream);
-                            break;
-                        case Algorithm.SHA512:
-                            arrBytes = sha512.ComputeHash(fileStream);
-                            break;
-                        default: // MD5
-                            arrBytes = md5.ComputeHash(fileStream);
-                            break;
-                    }
-
-                foreach (byte x in arrBytes)
-                    stringBuilder.Append(x.ToString("x2"));
-
-                return stringBuilder.ToString();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error while encrypting: " + e.Message);
-                return string.Empty;
+                return "Error while encrypting: " + e.Message;
             }
         }
     }

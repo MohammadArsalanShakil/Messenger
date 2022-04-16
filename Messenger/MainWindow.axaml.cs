@@ -3,7 +3,6 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using System.Collections.Generic;
-using Messenger.Util;
 using Messenger.Utils;
 
 namespace Messenger
