@@ -1,16 +1,16 @@
 Messenger
 
-### Main Window
+## Main Window
 <img src="/Screenshots/Main_Window.png"> 
 
-### Error Window
+## Error Window
 <img src="/Screenshots/Error_Window.png"> 
 
-### Encryption
+## Encryption
 <img src="/Screenshots/Text_Entered_for_Encryption.png"> 
 
-### Encrypted Text
+## Encrypted Text
 <img src="/Screenshots/Encrypted_Text_output.png"> 
 
-### Hashing
+## Hashing
 <img src="/Screenshots/Hash_Generated_for_Text.png">
