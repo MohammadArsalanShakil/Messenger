@@ -92,6 +92,12 @@ namespace Messenger
                     else
                         await MessageBox.Show(this, Messages.hashCopyErrorMessage, Messages.hashCopyErrorTitle, MessageBox.MessageBoxButtons.Ok);
                     break;
+                case "Btn_clearEncrypt":
+                    ((TextBox)_widgets["textBox_forEncrypt"]).Text = null;
+                    break;
+                case "Btn_clearDecrypt":
+                    ((TextBox)_widgets["textBox_forDecrypt"]).Text = null;
+                    break;
                 default:
                     break;
 

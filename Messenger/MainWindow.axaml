@@ -55,6 +55,7 @@
         <Grid.RowDefinitions>
           <RowDefinition Height="*" />
           <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*" />
@@ -62,6 +63,7 @@
 
         <Button Grid.Row="0" Name="Btn_Encrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Encrypt</Button>
         <Button Grid.Row="1" Name="Btn_Hash" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Generate Hash</Button>
+        <Button Grid.Row="2" Name="Btn_clearEncrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Clear Textbox</Button>
 
       </Grid>
       
@@ -79,8 +81,21 @@
 
       <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Enter Text for Decryption: </TextBlock>
       <TextBox Grid.Column="1" Name="textBox_forDecrypt" Watermark="Enter Cipher" AcceptsReturn="True" TextWrapping="Wrap" />
-      <Button Grid.Column="2" Name="Btn_Decrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Decrypt</Button>
 
+      <Grid Grid.Column="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Name="Btn_Decrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Encrypt</Button>
+        <Button Grid.Row="1" Name="Btn_clearDecrypt" Width="160" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_OnClick">Clear Textbox</Button>
+
+      </Grid>
+    
     </Grid>
 
     <Grid Grid.Row="4">
