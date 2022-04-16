@@ -43,9 +43,9 @@ namespace Messenger
             switch ((sender as Button).Name)
             {
                 case "Btn_Encrypt":
-                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != string.Empty)
+                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != null)
                     {
-                        if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
+                        if (((TextBox)_widgets["textBox_Key"]).Text != null)
                             ((TextBox)_widgets["textBox_forDecrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forEncrypt"]).Text);
                         else
                             await MessageBox.Show(this, Messages.keyEncryptErrorMessage, Messages.encryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
@@ -56,7 +56,7 @@ namespace Messenger
                     }
                     break;
                 case "Btn_Hash":
-                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != string.Empty)
+                    if (((TextBox)_widgets["textBox_forEncrypt"]).Text != null)
                     {
                         if (((RadioButton)_widgets["radioBtn_algo_MD5"]).IsChecked == true)
                             ((TextBlock)_widgets["textBlock_Hash"]).Text = CryptoUtil.GetHashFromString(((TextBox)_widgets["textBox_forEncrypt"]).Text, Algorithm.MD5);
@@ -75,9 +75,9 @@ namespace Messenger
                     }
                     break;
                 case "Btn_Decrypt":
-                    if (((TextBox)_widgets["textBox_forDecrypt"]).Text != string.Empty)
+                    if (((TextBox)_widgets["textBox_forDecrypt"]).Text != null)
                     {
-                        if (((TextBox)_widgets["textBox_Key"]).Text != string.Empty)
+                        if (((TextBox)_widgets["textBox_Key"]).Text != null)
                             ((TextBox)_widgets["textBox_forEncrypt"]).Text = CryptoUtil.Encrypt(((TextBox)_widgets["textBox_forDecrypt"]).Text);
                         else
                             await MessageBox.Show(this, Messages.keyDecryptErrorMessage, Messages.decryptionErrorTitle, MessageBox.MessageBoxButtons.Ok);
@@ -88,7 +88,7 @@ namespace Messenger
                     }
                     break;
                 case "Btn_copyHash":
-                    if (((TextBlock)_widgets["textBlock_Hash"]).Text != string.Empty)
+                    if (((TextBlock)_widgets["textBlock_Hash"]).Text != null)
                         await Application.Current.Clipboard.SetTextAsync(((TextBlock)_widgets["textBlock_Hash"]).Text);
                     else
                         await MessageBox.Show(this, Messages.hashCopyErrorMessage, Messages.hashCopyErrorTitle, MessageBox.MessageBoxButtons.Ok);

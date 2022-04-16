@@ -49,7 +49,15 @@ namespace Messenger
 
             void AddButton(string caption, MessageBoxResult r, bool def = false)
             {
-                var btn = new Button { Content = caption };
+                var btn = new Button
+                {
+                    Content = caption,
+                    Width = 150,
+                    VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
+                    HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                    VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
+                    HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                };
                 btn.Click += (_, __) => {
                     res = r;
                     msgbox.Close();
